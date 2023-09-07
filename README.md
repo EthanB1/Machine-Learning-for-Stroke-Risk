@@ -65,4 +65,5 @@ The most important metric to measure the performance of these models is the reca
 ## **Stroke Risk Indicator App**
 
 After identifying the best performing machine learning model, that model was used to create an application using Streamlit. The application asks the user questions to gather various data that mimics what is present in the initial dataset. The logistic regression model is then applied to the user's input and it provides the used with feedback about if they are at risk of stroke or not.
+
 ![StreamlitApp](Images/Streamlit_App.png)
