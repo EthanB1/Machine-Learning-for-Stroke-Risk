@@ -1,5 +1,13 @@
 # Machine Learning for Stroke Risk
 
+This repository provides an end-to-end machine learning project, aiming to predict the likelihood of an individual experiencing a stroke. The primary model used for final predictions is the Logistic Regression Model due to its higher recall for positive cases. This model is deployed and showcased through a user-friendly Streamlit application
+
+
+
+- **Objective**: To predict the risk of an individual having a stroke using health-related features.
+- **Primary Model**: Logistic Regression.
+- **Deployment**: Streamlit application with a user-friendly interface.
+- **Dataset Source**: [https://www.kaggle.com/code/nasimmahmud/stroke-prediction-using-ensemble-methods]
 ## **Team  - Project 2**
 
 ### Ethan Brush
@@ -17,7 +25,7 @@ The dataset used (located in the *'Resources'* folder of this repo) for this pro
 
 The goal of the project was to create and test various Machine Learning models to predict whether a person is at risk of having a stroke and what the important factors would be in identifying that risk. Using the best performing model, the idea was to create an interactive application using Streamlit linked to the model that can be used to predict whether a person is currently at risk of having a stroke based on their input data.
 
-The main program file is *'machine_learning_for_stroke_risk.ipynb'*, and the *'strokeapp.py'* file contains the code for the stroke risk indicator application.
+The main program file is *'machine_learning_for_stroke_risk.ipynb'*, and the *'strokeapp.py'* file contains the code for the stroke risk indicator application. The application can be run by opening 'strokeapp.py' and entering 'streamlit run strokeapp.py' in the terminal.
 #
 
 
@@ -29,11 +37,11 @@ The data was then visualized to present the information with alternative visual 
 
 After initial analysis and data visualization, it was determined that the dataset is imbalanced (apporximately a 19:1 ratio of no-stroke to positive stroke signals)
 
-![Stroke Proportion](Resources/stroke_proportion.png)
+![Stroke Proportion](Images/stroke_proportion.png)
 
 Additionally, some feature engineering was done to create a new column of data based on the number of potential risks. If a patient has a positive signal for a risk (ie. high bmi or glucose levels, hypertension, heart disease, smoking status) they were given a '1'. The 'number of risks' column summs up the total potential risk factors and acts as a solid indicator feature.
 
-![Number fo Risks](Resources/risk_visual.png)
+![Number fo Risks](Images/risk_visual.png)
 
 Due to the imbalanced nature of the data, the SMOTEEN oversampling technique was used to improve machine learning capability. Additionally, the data was scaled and split into testing and training sets for use in the models.
 #
@@ -49,12 +57,12 @@ Due to the imbalanced nature of the data, the SMOTEEN oversampling technique was
   * Stacking Classifier 
   * Neural Network
 
-The most important metric to measure the performance of these models is the recall score, that is, the ability for the model to allow the fewest number of missed positive stroke signals to slip through. Based on thsi metric, the Logistic Regression classifier produced the best results.
+The most important metric to measure the performance of these models is the recall score, that is, the ability for the model to allow the fewest number of missed positive stroke signals to slip through. Based on this metric, the Logistic Regression classifier produced the best results.
 
-![Model Performance](Resources/model_performance.png)
+![Model Performance](Images/model_performance.png)
 #
 
 ## **Stroke Risk Indicator App**
 
 After identifying the best performing machine learning model, that model was used to create an application using Streamlit. The application asks the user questions to gather various data that mimics what is present in the initial dataset. The logistic regression model is then applied to the user's input and it provides the used with feedback about if they are at risk of stroke or not.
-
+![StreamlitApp](Images/Streamlit_App.png)
